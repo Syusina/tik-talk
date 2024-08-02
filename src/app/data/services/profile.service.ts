@@ -6,10 +6,10 @@ import { Profile } from './interfaces/profile.interface';
   providedIn: 'root'
 })
 export class ProfileService {
-  http = inject(HttpClient);
-  baseApiUrl = 'https://icherniakov.ru/yt-course/';
+  private http = inject(HttpClient);
+  private baseApiUrl = 'https://icherniakov.ru/yt-course/';
 
-  getTextAccounts() {
-    return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`)
+  public getTextAccounts() {
+    return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`);
   }
 }
