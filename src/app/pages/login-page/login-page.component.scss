@@ -11,3 +11,17 @@
   min-width: 170px;
   max-width: 400px;
 }
+
+.password-input {
+  position: relative;
+}
+
+.password-eye-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--light-gray)
+}
