@@ -44,6 +44,32 @@
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
+}
+
+
+.medium-text {
+  margin-bottom: 20px;
+  margin-left: 28px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.to-subscribers {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.to-subscribers-link {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.arrowIcon {
+  width: 18px;
+  height: 18px;
 }

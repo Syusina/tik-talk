@@ -16,3 +16,17 @@
     <li></li>
   </ul>
 </nav>
+
+<p class="medium-text">Подписчики</p>
+
+<pre>{{ subscribers$ | async }}</pre>
+
+<div class="to-subscribers">
+  <a
+    [routerLink]="['/subscribers']"
+    class="to-subscribers-link medium-text"
+  >
+  Все подписчики
+  <svg icon="arrow" class="arrowIcon"></svg>
+  </a>
+</div>
