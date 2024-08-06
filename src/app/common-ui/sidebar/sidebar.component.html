@@ -19,14 +19,16 @@
 
 <p class="medium-text">Подписчики</p>
 
-<pre>{{ subscribers$ | async | json }}</pre>
+<ng-container *ngFor="let profile of subscribers$ | async">
+  <app-subscriber-card [profile]="profile"></app-subscriber-card>
+</ng-container>
 
 <div class="to-subscribers">
   <a
     [routerLink]="['/subscribers']"
     class="to-subscribers-link medium-text"
   >
-  Все подписчики
-  <svg icon="arrow" class="arrowIcon"></svg>
+    Все подписчики
+    <svg icon="arrow" class="arrowIcon"></svg>
   </a>
 </div>

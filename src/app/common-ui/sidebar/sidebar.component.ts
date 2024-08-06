@@ -1,23 +1,22 @@
 import { Component, inject } from '@angular/core';
 import { SvgComponent } from '../svg/svg.component';
-import { AsyncPipe, JsonPipe, NgFor } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { AsyncPipe, JsonPipe, NgFor, NgIf } from '@angular/common';
+import { RouterLink, RouterModule } from '@angular/router';
 import { SubscriberCardComponent } from './subscriber-card/subscriber-card.component';
 import { ProfileService } from '../../data/services/profile.service';
 import { ImgUrlPipe } from '../../helpers/pipes/img-url.pipe';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [SvgComponent, NgFor, RouterLink, SubscriberCardComponent, AsyncPipe, ImgUrlPipe, JsonPipe],
+  imports: [SvgComponent, NgFor, NgIf, RouterLink, RouterModule, SubscriberCardComponent, AsyncPipe, ImgUrlPipe, JsonPipe],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
   profileService = inject(ProfileService);
-
   subscribers$ = this.profileService.getSubscribersShortList();
-
   me = this.profileService.getMe();
 
   menuItems = [
@@ -38,5 +37,7 @@ export class SidebarComponent {
     }
   ];
 
-
+  ngOnInit() {
+    firstValueFrom(this.profileService.getMe())
+  }
 }

@@ -1,6 +1,8 @@
 :host {
   display: block;
   padding: 20px 12px;
+  background-color: var(--dark-color);
+  height: 100dvh;
 }
 
 .img {
@@ -65,6 +67,7 @@
 }
 
 .to-subscribers-link {
+  display: flex;
   text-decoration: none;
   color: var(--primary-color);
 }
@@ -72,4 +75,13 @@
 .arrowIcon {
   width: 18px;
   height: 18px;
+  margin-left: 20px;
+}
+
+.sidebar-footer {
+  background-color: var(--dark-hover);
+  border-radius: 2px;
+  padding: 4px 16px;
+  display: grid;
+  grid-template-columns: 32px 1fr 16px;
 }
